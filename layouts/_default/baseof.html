@@ -8,6 +8,9 @@
     {{ if .Site.Params.csp }}
       {{ partial "_shared/csp.html" . }}
     {{ end }}
+    {{ if .Site.Params.adsense }}
+      {{ partial "_shared/ads.html" . }}
+    {{ end }}
 
     {{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
     <meta name="description" content="{{ .Description | default (.Summary | default .Site.Params.description ) }}">
